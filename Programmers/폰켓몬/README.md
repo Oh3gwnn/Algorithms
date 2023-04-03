@@ -1,4 +1,4 @@
-# [level 1] 옹알이 - 120956 
+# [level 1] 폰켓몬 - 1845
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/1845) 
 
