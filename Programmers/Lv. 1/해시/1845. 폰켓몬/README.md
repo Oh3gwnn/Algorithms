@@ -2,10 +2,6 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/1845) 
 
-### 성능 요약
-
-통과 (0.00ms, 10.1MB)
-
 ### 구분
 
 코딩테스트 연습 > 해시
