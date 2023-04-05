@@ -1,6 +1,6 @@
 # [level 2] 전화번호 목록 - 42577
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42677) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42577) 
 
 ### 구분
 
