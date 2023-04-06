@@ -79,7 +79,7 @@ def solution(genres, plays):
 
     return answer
 """
-# 결국 참고...
+# 결국 참고... 근데 로직은 비슷한거같은데?
 def solution(genres, plays):
     answer = []
     
@@ -101,5 +101,52 @@ def solution(genres, plays):
     for (k, v) in sorted(genSum.items(), key=lambda x:x[1], reverse=True):
         for (i, p) in sorted(gip[k], key=lambda x:x[1], reverse=True)[:2]:
             answer.append(i)
+    
+    return answer
+
+# 처음에 했던거로 다시 풀어본 거
+# 알고보니 '장르 내에서 재생 횟수가 같은 노래 중에서는 고유 번호가 낮은 노래를 먼저 수록합니다.'
+# 이런 말이 있었는데, 나는 '모든 장르는 재생된 횟수가 다릅니다.' 이거보고 착각했다.
+# 하여튼 같은 재생 횟수 고유번호를 다시 분배했더니 됐다.
+
+def solution(genres, plays):
+    answer = []
+    genre_play = {}
+    play_dic = {}
+    genre_max = {}
+    
+    # 재생횟수:고유번호
+    for i, p in enumerate(plays):
+        if p not in play_dic:
+            play_dic[p] = [i]
+        else:
+            play_dic[p].append(i)
+    
+    # 장르:재생횟수
+    # 장르:많이 재생된 장르
+    for i in range(len(genres)):
+        if genres[i] in genre_play:
+            genre_play[genres[i]] += [plays[i]]
+            genre_max[genres[i]] += plays[i]
+        else:
+            genre_play[genres[i]] = [plays[i]]
+            genre_max[genres[i]] = plays[i]
+            
+    # 가장 많이 재생된 노래 두 곡
+    for i in genre_play:
+        if len(genre_play[i]) >= 2:
+            genre_play[i] = sorted(genre_play[i], reverse = True)[0:2]
+            
+    #많이 재생된 장르 내림차순 정리
+    genre_max = dict(sorted(genre_max.items(), key = lambda x:x[1] ,reverse = True))
+    
+    #return
+    for i in genre_max:
+        for j in genre_play[i]:
+            print(play_dic[j])
+            if play_dic[j] not in answer:
+                answer.append(play_dic[j])
+                
+    answer = sum(answer, [])
     
     return answer
