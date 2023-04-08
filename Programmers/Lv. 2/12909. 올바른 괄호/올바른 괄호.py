@@ -25,22 +25,19 @@ def solution(s):
     while '()' in s :
         s = s.replace("()", "")
     
-    if s == "" : return True
-    else : return False
+    return s == ""
 
-# 통과
+# 첫 번째 수정해서 통과
 def solution(s):
     tmp = 0
-    for i in s:
+
+    for a in s:
         if tmp < 0:
-            return False
-    
-        if i == '(': 
+            break
+        
+        if a == '(':
             tmp += 1
         else:
-            if i == ')':
-                tmp -= 1
-            else:
-                tmp = tmp
-            
+            tmp -= 1
+    
     return tmp == 0
