@@ -1,29 +1,24 @@
 # BFS와 que가 쓰였는데 빨리 배우는 게 좋을 것 같다.
 # 레벨 2인데 손도 못대겠다.
 def solution(maps):
-    answer = 0
     ax = [0, 0, -1, 1]
     ay = [-1, 1, 0, 0]
-    
-    def bfs(x, y):
-        que = [(x,y)]
-        
-        while que:
-            x, y = que.pop(0)
-            
-            for i in range(4):
-                mx = x + ax[i]
-                my = y + ay[i]
+    que = [(0,0)]
+
+    while que:
+        x, y = que.pop(0)
+
+        for i in range(4):
+            mx = x + ax[i]
+            my = y + ay[i]
+
+            if mx < 0 or mx >= len(maps) or my < 0 or my >= len(maps[0]): continue
+
+            if maps[mx][my] == 0: continue
+
+            if maps[mx][my] == 1:
+                maps[mx][my] = maps[x][y] + 1
+                que.append((mx, my))
                 
-                if mx < 0 or mx >= len(maps) or my < 0 or my >= len(maps[0]): continue
-                
-                if maps[mx][my] == 0: continue
-                
-                if maps[mx][my] == 1:
-                    maps[mx][my] = maps[x][y] + 1
-                    que.append((mx, my))
-                
-        return maps[len(maps)-1][len(maps[0])-1]
-    
-    answer = bfs(0, 0)
+    answer = maps[-1][-1]
     return -1 if answer == 1 else answer
