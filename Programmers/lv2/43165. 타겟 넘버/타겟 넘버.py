@@ -19,6 +19,7 @@ def solution(numbers, target):
     return answer
 
 # DFS (깊이 우선 탐색)
+'''
 answer = 0
 
 def DFS(idx, numbers, target, value):
@@ -36,3 +37,4 @@ def solution(numbers, target):
     global answer
     DFS(0,numbers,target,0)
     return answer
+'''
