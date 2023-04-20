@@ -14,7 +14,8 @@ def solution(scoville, k):
 
      return mix_cnt
 '''
-# 힙은 자동정렬 기능이 추가되어있다.
+# 힙은 push, pop 작동 시 자동정렬 기능이 추가되어있다.
+# sort의 정렬 비용을 감소시킨다.
 import heapq
 
 def solution(scoville, k):
