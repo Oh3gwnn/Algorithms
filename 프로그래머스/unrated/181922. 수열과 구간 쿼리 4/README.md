@@ -1,10 +1,10 @@
 # [unrated] 수열과 구간 쿼리 4 - 181922 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181922?language=python3) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181922?language=java) 
 
 ### 성능 요약
 
-메모리: 10.3 MB, 시간: 4.70 ms
+메모리: 73.6 MB, 시간: 1.64 ms
 
 ### 구분
 
