@@ -1,3 +1,6 @@
+# isdigit() 자꾸 까먹는다 기억하자
+# 람다식 여러 요소 -> 튜플로 활용 가능 x : (x1, x2, ...)
+
 def solution(files):
     answer = []
     head, number, tail = '', '', ''
