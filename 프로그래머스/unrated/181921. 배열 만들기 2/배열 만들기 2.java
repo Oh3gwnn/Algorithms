@@ -11,7 +11,9 @@ class Solution {
         }
         
         if (lst.size() == 0) lst.add(-1);
-            
+        
+        // mapToInt() 메서드 - Stream 요소를 IntStream 반환
+        // toArray() 메서드 - IntStream -> int[] 배열로 변환
         return lst.stream().mapToInt(i -> i).toArray();
     }
 }
