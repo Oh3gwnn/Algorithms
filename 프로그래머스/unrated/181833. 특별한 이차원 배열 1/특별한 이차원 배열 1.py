@@ -1,9 +1,4 @@
 def solution(n):
-    answer = []
-    for i in range(n):
-        tmp = []
-        for j in range(n):
-            if i == j: tmp.append(1)
-            else: tmp.append(0)
-        answer.append(tmp)
+    answer = [[0]*n for i in range(n)]
+    for i in range(n): answer[i][i] = 1
     return answer
