@@ -7,10 +7,8 @@ m = int(input())
 lst2 = list(map(int, input().split()))
 answer = {}
 
-for i in lst1:
-    if i in answer: answer[i] +=  1
-    else: answer[i] = 1
-
+for i in lst1: answer[i] = 1
+    
 for i in lst2:
     if i in answer: print(answer[i], end=" ")
     else: print(0, end=" ")
