@@ -10,9 +10,9 @@ def equalpaper(row, col, n):
     for i in range(row, row+n):
         for j in range(col, col+n):
             if tmp != paper[i][j]:
-                for x in range(3):
-                    for y in range(3):
-                        equalpaper(row+x*n//3, col+y*n//3, n//3)
+                for x in range(0, n, n//3):
+                    for y in range(0, n, n//3):
+                        equalpaper(row+x, col+y, n//3)
                 return
             
     use_dict[tmp] += 1
