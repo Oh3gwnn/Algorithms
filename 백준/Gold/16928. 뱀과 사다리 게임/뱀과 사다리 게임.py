@@ -23,6 +23,8 @@ def bfs(start):
 
         for i in range(1,7):
             if 100 >= i+tmp and visited[i+tmp] == 0:
+                # 이전 방문 횟수랑 현재 방문 횟수 둘 중 작은거 넣어야 됨.
+                # 이거까진 했는데 0일 때 처리를 못해서 자꾸 버벅
                 if visited[i+tmp] == 0 or visited[i+tmp] > visited[tmp] + 1 :
                     visited[i+tmp] = visited[tmp] + 1
                 if board[i+tmp]: 
