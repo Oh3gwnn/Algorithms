@@ -1,38 +1,28 @@
-import sys  
+import sys
+from itertools import combinations
+from collections import defaultdict
 input = sys.stdin.readline
-from collections import defaultdict  
-from itertools import combinations  
 
-def check(a, b):  
-    if a == b:  
-        return 0  
-    else:  
-        return 1  
+t = int(input())
 
-T = int(input())  
-for _ in range(T):  
-    result = float('inf')  
-    N = int(input())  
-    people = [*map(str, input().rstrip().split())]  
-    mbties = defaultdict(int)  
-    for i in people:  
-        mbties[i] += 1  
-
-    for i in mbties:  
-        if mbties[i] >= 3:  
-            print(0)  
-            break  
-    else:  
-        for j in combinations(people,3):  
-            k = j[0]  
-            l = j[1]  
-            u = j[2]  
-            cnt = 0  
-            for m in range(4):  
-                a = check(k[m], l[m])  
-                b = check(k[m], u[m])  
-                c = check(l[m], u[m])  
-                cnt += a + b + c  
-            if cnt < result:  
-                result = cnt  
-        print(result)
+for _ in range(t):
+    res = 999999
+    n = int(input())
+    mbti = list(map(str, input().split()))
+    m = defaultdict(int)
+    for i in mbti: m[i] += 1
+    for i in m:
+        if m[i] >= 3:
+            print(0)
+            break
+    else:
+        for i in combinations(mbti, 3):
+            a, b, c = i[0], i[1], i[2]
+            cnt = 0
+            for j in range(4):
+                c1 = 1 if a[j] != b[j] else 0
+                c2 = 1 if b[j] != c[j] else 0
+                c3 = 1 if a[j] != c[j] else 0
+                cnt += c1 + c2 + c3
+            res = min(res, cnt)
+        print(res)
